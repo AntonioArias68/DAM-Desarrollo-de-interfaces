@@ -1,0 +1,1617 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IbanNet</name>
+    </assembly>
+    <members>
+        <member name="T:IbanNet.Builders.BankAccountBuilderException">
+            <summary>
+            The exception that is thrown when building a bank account number fails.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.BankAccountBuilderException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.BankAccountBuilderException" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.BankAccountBuilderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.BankAccountBuilderException" /> using specified message.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:IbanNet.Builders.BankAccountBuilderException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.BankAccountBuilderException" /> class using specified message and inner exception.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:IbanNet.Builders.BankAccountBuilderException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.BankAccountBuilderException" /> with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:IbanNet.Builders.BbanBuilder">
+            <summary>
+            A builder to build national bank account numbers (BBAN).
+            <para>
+            The builder does not ensure validity of the returned BBAN. Use a validator on the built BBAN to ensure validity.
+            </para>
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.BbanBuilder" /> class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.WithCountry(IbanNet.Registry.IbanCountry)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.WithBankAccountNumber(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.WithBankIdentifier(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.WithBranchIdentifier(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.BbanBuilder.Build">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Builders.BuilderExtensions">
+            <summary>
+            Extensions for builders.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.BuilderExtensions.GetIbanBuilder(IbanNet.Registry.IbanCountry)">
+            <summary>
+            Gets an <see cref="T:IbanNet.Builders.IbanBuilder" /> for this country.
+            </summary>
+            <param name="country">The country.</param>
+            <returns>An instance of <see cref="T:IbanNet.Builders.IbanBuilder" /> for the country specified in <paramref name="country" />.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="country" /> is null.</exception>
+        </member>
+        <member name="M:IbanNet.Builders.BuilderExtensions.GetBbanBuilder(IbanNet.Registry.IbanCountry)">
+            <summary>
+            Gets an <see cref="T:IbanNet.Builders.BbanBuilder" /> for this country.
+            </summary>
+            <param name="country">The country.</param>
+            <returns>An instance of <see cref="T:IbanNet.Builders.BbanBuilder" /> for the country specified in <paramref name="country" />.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="country" /> is null.</exception>
+        </member>
+        <member name="M:IbanNet.Builders.BuilderExtensions.WithCountry(IbanNet.Builders.IBankAccountBuilder,System.String,IbanNet.Registry.IIbanRegistry)">
+            <summary>
+            Adds the specified <paramref name="countryCode" /> to the builder.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="countryCode">The country code.</param>
+            <param name="registry">The IBAN registry to resolve the country from.</param>
+            <returns>The builder to continue chaining.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="countryCode" /> or <paramref name="registry" /> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="countryCode" /> is not defined in the <paramref name="registry" />.</exception>
+        </member>
+        <member name="T:IbanNet.Builders.IbanBuilder">
+            <summary>
+            A builder to build international bank account numbers (IBAN).
+            <para>
+            The builder does not ensure validity of the returned IBAN. The check digits are valid, but the characters used may be invalid. Use a validator on the built IBAN to ensure validity.
+            </para>
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Builders.IbanBuilder" /> class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.WithCountry(IbanNet.Registry.IbanCountry)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.WithBankAccountNumber(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.WithBankIdentifier(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.WithBranchIdentifier(System.String,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Builders.IbanBuilder.Build">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Builders.IBankAccountBuilder">
+            <summary>
+            A builder to build bank account numbers.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Builders.IBankAccountBuilder.WithCountry(IbanNet.Registry.IbanCountry)">
+            <summary>
+            Adds the specified <paramref name="country" /> to the builder.
+            </summary>
+            <param name="country">The country.</param>
+            <returns>The builder to continue chaining.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="country" /> is null.</exception>
+        </member>
+        <member name="M:IbanNet.Builders.IBankAccountBuilder.WithBankIdentifier(System.String,System.Boolean)">
+            <summary>
+            Adds the specified <paramref name="bankIdentifier" /> to the builder.
+            </summary>
+            <param name="bankIdentifier">The bank identifier.</param>
+            <param name="enablePadding"><see langword="true" /> to enable automatic left padding with '0' if a value is too short, <see langword="false" /> to disable padding and throw exceptions if a value is too short.</param>
+            <returns>The builder to continue chaining.</returns>
+        </member>
+        <member name="M:IbanNet.Builders.IBankAccountBuilder.WithBranchIdentifier(System.String,System.Boolean)">
+            <summary>
+            Adds the specified <paramref name="branchIdentifier" /> to the builder.
+            </summary>
+            <param name="branchIdentifier">The branch identifier.</param>
+            <param name="enablePadding"><see langword="true" /> to enable automatic left padding with '0' if a value is too short, <see langword="false" /> to disable padding and throw exceptions if a value is too short.</param>
+            <returns>The builder to continue chaining.</returns>
+        </member>
+        <member name="M:IbanNet.Builders.IBankAccountBuilder.WithBankAccountNumber(System.String,System.Boolean)">
+            <summary>
+            Adds the specified <paramref name="bankAccountNumber" /> to the builder.
+            </summary>
+            <param name="bankAccountNumber">The bank account number.</param>
+            <param name="enablePadding"><see langword="true" /> to enable automatic left padding with '0' if a value is too short, <see langword="false" /> to disable padding and throw exceptions if a value is too short.</param>
+            <returns>The builder to continue chaining.</returns>
+        </member>
+        <member name="M:IbanNet.Builders.IBankAccountBuilder.Build">
+            <summary>
+            Creates the bank account number.
+            </summary>
+            <returns>The bank account number.</returns>
+            <exception cref="T:IbanNet.Builders.BankAccountBuilderException">Thrown when bank account number cannot be built.</exception>
+        </member>
+        <member name="T:IbanNet.CheckDigits.Calculators.ICheckDigitsCalculator">
+            <summary>
+            Describes a calculator which computes check digits for a given input string.
+            </summary>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.ICheckDigitsCalculator.Compute(System.Char[])">
+            <summary>
+            Returns the check digits for specified <paramref name="value" />.
+            </summary>
+            <param name="value">The input buffer to compute check digits for.</param>
+            <returns>The check digits.</returns>
+            <exception cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException">Thrown when an invalid character was encountered.</exception>
+        </member>
+        <member name="T:IbanNet.CheckDigits.Calculators.InvalidTokenException">
+            <summary>
+            Exception that is thrown when an unexpected token/character is encountered while computing check digits.
+            </summary>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.InvalidTokenException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.InvalidTokenException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException" /> using specified message.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.InvalidTokenException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException" /> class using specified message and inner exception.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.InvalidTokenException.#ctor(System.Int32,System.Char)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException" /> using specified <paramref name="position" /> and the character that was not expected.
+            </summary>
+            <param name="position">The position in the string/char buffer where the unexpected character is located.</param>
+            <param name="unexpectedChar">The character that was not expected.</param>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.InvalidTokenException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.CheckDigits.Calculators.InvalidTokenException" /> with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:IbanNet.CheckDigits.Calculators.Mod97CheckDigitsCalculator">
+            <summary>
+            Computes check digits using mod 97 algorithm.
+            </summary>
+        </member>
+        <member name="M:IbanNet.CheckDigits.Calculators.Mod97CheckDigitsCalculator.Compute(System.Char[])">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.DependencyInjection.DependencyResolverAdapter">
+            <summary>
+            A base adapter for dependency injection implementations to implement.
+            </summary>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.DependencyResolverAdapter.GetService(System.Type)">
+            <summary>
+            Gets a service by <paramref name="serviceType" />.
+            </summary>
+            <param name="serviceType">The service type.</param>
+            <returns>An instance of the <paramref name="serviceType" />.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.DependencyResolverAdapter.GetRequiredService(System.Type)">
+            <summary>
+            Gets a service by <paramref name="serviceType" />.
+            </summary>
+            <param name="serviceType">The service type.</param>
+            <returns>An instance of the <paramref name="serviceType" />.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.DependencyResolverAdapter.GetService``1">
+            <summary>
+            Gets a service of type <typeparamref name="T" />.
+            </summary>
+            <typeparam name="T">The service type.</typeparam>
+            <returns>An instance of type <typeparamref name="T" />.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.DependencyResolverAdapter.GetRequiredService``1">
+            <summary>
+            Gets a service of type <typeparamref name="T" />.
+            </summary>
+            <typeparam name="T">The service type.</typeparam>
+            <returns>An instance of type <typeparamref name="T" />.</returns>
+        </member>
+        <member name="T:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions">
+            <summary>
+            Extensions for <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.Configure(IbanNet.DependencyInjection.IIbanNetOptionsBuilder,System.Action{IbanNet.IbanValidatorOptions})">
+            <summary>
+            Registers a handler to configure the options when the builder executes.
+            </summary>
+            <param name="builder">The builder instance.</param>
+            <param name="configure">The handler that is called when configuring the options.</param>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.UseRegistry(IbanNet.DependencyInjection.IIbanNetOptionsBuilder,System.Collections.Generic.IEnumerable{IbanNet.Registry.IbanCountry})">
+            <summary>
+            Configures the <see cref="T:IbanNet.IbanValidator" /> to use the specified registry.
+            </summary>
+            <param name="builder">The builder instance.</param>
+            <param name="registry">The registry of IBAN countries.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.UseRegistryProvider(IbanNet.DependencyInjection.IIbanNetOptionsBuilder,IbanNet.Registry.IIbanRegistryProvider[])">
+            <summary>
+            Configures the <see cref="T:IbanNet.IbanValidator" /> to use the specified provider(s).
+            </summary>
+            <param name="builder">The builder instance.</param>
+            <param name="registryProviders">One or more registry providers.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.WithRule(IbanNet.DependencyInjection.IIbanNetOptionsBuilder,System.Type)">
+            <summary>
+            Registers a custom validation rule that is executed after built-in validation has passed.
+            </summary>
+            <param name="builder">The builder instance.</param>
+            <param name="implementationType">The type of the validation rule.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.WithRule``1(IbanNet.DependencyInjection.IIbanNetOptionsBuilder)">
+            <summary>
+            Registers a custom validation rule that is executed after built-in validation has passed.
+            </summary>
+            <typeparam name="T">The type of the validation rule.</typeparam>
+            <param name="builder">The builder instance.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IbanNetOptionsBuilderExtensions.WithRule``1(IbanNet.DependencyInjection.IIbanNetOptionsBuilder,System.Func{``0})">
+            <summary>
+            Registers a custom validation rule that is executed after built-in validation has passed.
+            </summary>
+            <typeparam name="T">The type of the validation rule.</typeparam>
+            <param name="builder">The builder instance.</param>
+            <param name="implementationFactory">The factory returning a new instance of the rule.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder">
+            <summary>
+            Describes the options builder for IbanNet, that can be implemented by dependency injection frameworks.
+            </summary>
+        </member>
+        <member name="M:IbanNet.DependencyInjection.IIbanNetOptionsBuilder.Configure(System.Action{IbanNet.DependencyInjection.DependencyResolverAdapter,IbanNet.IbanValidatorOptions})">
+            <summary>
+            Registers a handler to configure the options when the builder executes.
+            </summary>
+            <param name="configure">The handler that is called when configuring the options.</param>
+            <returns>The <see cref="T:IbanNet.DependencyInjection.IIbanNetOptionsBuilder" /> so that additional calls can be chained.</returns>
+        </member>
+        <member name="M:IbanNet.Extensions.ArrayExtensions.Fill``1(``0[],``0)">
+            <summary>
+            Fills each <paramref name="array"/> element with the value specified in <paramref name="fillWith"/>
+            </summary>
+            <typeparam name="T">The array element type.</typeparam>
+            <param name="array">The array to fill.</param>
+            <param name="fillWith">The element to fill the array with.</param>
+            <returns>The filled array.</returns>
+        </member>
+        <member name="T:IbanNet.Extensions.CharExtensions">
+            <summary>
+            Taken partially from MS source for <see cref="T:System.Char" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Extensions.CharExtensions.IsAlphaNumeric(System.Char)">
+            <summary>
+            Returns true if char is 0-9, a-z or A-Z and false otherwise.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Extensions.PartitionExtensions.Partition``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Splits a given <paramref name="sequence" /> into partitions of specified <paramref name="size" />.
+            </summary>
+            <remarks>
+            If the number of elements in the <paramref name="sequence" /> is not an exact multiple of <paramref name="size" />, the last partition of the returned partition set is smaller.
+            </remarks>
+            <typeparam name="TSource">The type of the sequence elements.</typeparam>
+            <param name="sequence">The sequence to partition.</param>
+            <param name="size">The size of each partition to split the <paramref name="sequence" /> into.</param>
+            <returns>an enumerable of partitions</returns>
+        </member>
+        <member name="M:IbanNet.Extensions.PartitionExtensions.PartitionOn(System.String,System.Char[])">
+            <summary>
+            Splits a given <paramref name="sequence" /> into partitions when encountering any of the <paramref name="chars" />.
+            </summary>
+            <param name="sequence">The sequence to partition.</param>
+            <param name="chars">A list of markers to partition on.</param>
+            <returns>an enumerable of partitions</returns>
+        </member>
+        <member name="M:IbanNet.Extensions.PartitionExtensions.PartitionOn(System.ReadOnlySpan{System.Char},System.Func{System.Char,System.Boolean})">
+            <summary>
+            Splits a given <paramref name="sequence" /> into partitions where the delegate <paramref name="when" /> returns true for a given character.
+            </summary>
+            <param name="sequence">The sequence to partition.</param>
+            <param name="when">A delegate that determines when to partition.</param>
+            <returns>an enumerable of partitions</returns>
+        </member>
+        <member name="T:IbanNet.Extensions.SwissIbanExtensions">
+            <summary>
+            Switzerland specific extensions for <see cref="T:IbanNet.Iban" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Extensions.SwissIbanExtensions.IsQrIban(IbanNet.Iban)">
+            <summary>
+            Gets whether the IBAN is a valid QR-IBAN from a Swiss or Liechtenstein account.
+            <para>
+            A valid QR-IBAN must have a valid QR-IID, i.e. the bank number must be within the [30000, 31999] range (both ends inclusive).
+            </para>
+            <para>
+            The formal definition of IID, QR-IID and QR-IBAN can be found in the
+            [Swiss Implementation Guidelines for the QR-bill](https://www.paymentstandards.ch/dam/downloads/ig-qr-bill-en.pdf).
+            </para>
+            <param name="iban">The iban.</param>
+            <example>
+            <list type="bullet">
+              <item>
+                <description>This property returns <see langword="true"/> for a QR-IBAN: <c>CH72 3000 0000 1234 5678 9</c> (IID = 30000)</description>
+              </item>
+              <item>
+                <description>This property returns <see langword="false"/> for a standard IBAN: <c>CH76 0900 0000 1234 5678 9</c> (IID = 9000)</description>
+              </item>
+            </list>
+            </example>
+            </summary>
+        </member>
+        <member name="T:IbanNet.Iban">
+            <summary>
+            Represents an IBAN.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Iban.Validator">
+            <summary>
+            Gets or sets the <see cref="T:IbanNet.IIbanValidator" /> used to validate an IBAN.
+            <para>
+            Note: avoid using this member, it's only use case is allowing type conversion and may be obsolete in future.
+            </para>
+            </summary>
+        </member>
+        <member name="P:IbanNet.Iban.Country">
+            <summary>
+            Gets the country.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Iban.Bban">
+            <summary>
+            Gets the BBAN.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Iban.BankIdentifier">
+            <summary>
+            Gets the bank identifier, or null if bank identifier cannot be extracted.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Iban.BranchIdentifier">
+            <summary>
+            Gets the branch identifier, or null if branch identifier cannot be extracted.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Iban.ToString(IbanNet.IbanFormat)">
+            <summary>Returns a string that represents the current <see cref="T:IbanNet.Iban" />.</summary>
+            <example>
+            <see cref="F:IbanNet.IbanFormat.Print" /> => NL91 ABNA 0417 1643 00
+            <see cref="F:IbanNet.IbanFormat.Electronic" /> => NL91ABNA0417164300
+            <see cref="F:IbanNet.IbanFormat.Obfuscated" /> => XXXXXXXXXXXXXXXXXX4300
+            </example>
+            <param name="format">The format to use.</param>
+            <returns>A string that represents the current <see cref="T:IbanNet.Iban" />.</returns>
+        </member>
+        <member name="M:IbanNet.Iban.ToString">
+            <summary>Returns a string that represents the current <see cref="T:IbanNet.Iban" />.</summary>
+            <returns>A string that represents the current <see cref="T:IbanNet.Iban" />.</returns>
+        </member>
+        <member name="M:IbanNet.Iban.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object. </param>
+            <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+        </member>
+        <member name="M:IbanNet.Iban.GetHashCode">
+            <summary>
+            Serves as the default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:IbanNet.Iban.op_Equality(IbanNet.Iban,IbanNet.Iban)">
+            <summary>
+            Determines whether the <see cref="T:IbanNet.Iban" />s are equal to each other.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IbanNet.Iban.op_Inequality(IbanNet.Iban,IbanNet.Iban)">
+            <summary>
+            Determines whether the <see cref="T:IbanNet.Iban" />s are unequal to each other.
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IbanNet.IbanFormat">
+            <summary>
+            Formats to represent IBAN's in.
+            </summary>
+        </member>
+        <member name="F:IbanNet.IbanFormat.Print">
+            <summary>
+            Represent IBAN in human readable format. (ie. NL91 ABNA 0417 1643 00)
+            </summary>
+        </member>
+        <member name="F:IbanNet.IbanFormat.Electronic">
+            <summary>
+            Represent IBAN in electronic format. (ie.: NL91ABNA0417164300)
+            </summary>
+        </member>
+        <member name="F:IbanNet.IbanFormat.Obfuscated">
+            <summary>
+            Represent IBAN in obfuscated format. (ie.: XXXXXXXXXXXXXXXX4300)
+            </summary>
+        </member>
+        <member name="T:IbanNet.IbanFormatException">
+            <summary>
+            The exception that is thrown when the format of an IBAN is invalid.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanFormatException" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanFormatException" /> class using specified message.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:IbanNet.IbanFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanFormatException" /> class using specified message and inner exception.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:IbanNet.IbanFormatException.#ctor(System.String,IbanNet.ValidationResult)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanFormatException" /> class using specified message and validation result.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="validationResult">The validation result.</param>
+        </member>
+        <member name="P:IbanNet.IbanFormatException.Result">
+            <summary>
+            Gets the validation result.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanFormatException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanFormatException" /> with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:IbanNet.IbanParser">
+            <summary>
+            Provides parsing of international bank account numbers into an <see cref="T:IbanNet.Iban" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanParser.#ctor(IbanNet.Registry.IIbanRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanParser" /> class using specified <paramref name="registry" />.
+            </summary>
+            <param name="registry">The registry.</param>
+        </member>
+        <member name="M:IbanNet.IbanParser.#ctor(IbanNet.IIbanValidator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanParser" /> class using specified <paramref name="ibanValidator" />.
+            </summary>
+            <param name="ibanValidator"></param>
+        </member>
+        <member name="M:IbanNet.IbanParser.Parse(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.IbanParser.TryParse(System.String,IbanNet.Iban@)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.IbanValidator">
+            <summary>
+            Represents the default IBAN validator.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanValidator" /> class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanValidator.#ctor(IbanNet.IbanValidatorOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanValidator" /> class with specified options.
+            </summary>
+            <param name="options">The validator options.</param>
+        </member>
+        <member name="M:IbanNet.IbanValidator.#ctor(IbanNet.IbanValidatorOptions,IbanNet.Validation.IValidationRuleResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.IbanValidator" /> class with specified options.
+            </summary>
+            <param name="options">The validator options.</param>
+            <param name="validationRuleResolver">The validation rule resolver.</param>
+        </member>
+        <member name="P:IbanNet.IbanValidator.Options">
+            <summary>
+            Gets the validator options.
+            </summary>
+            <remarks>The instance members should not be set/modified after creating the <see cref="T:IbanNet.IbanValidator" />.</remarks>
+        </member>
+        <member name="P:IbanNet.IbanValidator.SupportedCountries">
+            <summary>
+            Gets the supported countries.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IbanValidator.Validate(System.String)">
+            <summary>
+            Validates the specified IBAN for correctness.
+            </summary>
+            <param name="iban">The IBAN value.</param>
+            <returns>a validation result, indicating if the IBAN is valid or not</returns>
+        </member>
+        <member name="T:IbanNet.IbanValidatorOptions">
+            <summary>
+            Options for <see cref="T:IbanNet.IbanValidator" />.
+            </summary>
+        </member>
+        <member name="P:IbanNet.IbanValidatorOptions.Registry">
+            <summary>
+            Gets or sets the IBAN country registry factory. Defaults to <see cref="P:IbanNet.Registry.IbanRegistry.Default" />.
+            </summary>
+        </member>
+        <member name="P:IbanNet.IbanValidatorOptions.Rules">
+            <summary>
+            Gets custom rules to apply after built-in IBAN validation has taken place.
+            </summary>
+        </member>
+        <member name="T:IbanNet.IIbanParser">
+            <summary>
+            Provides parsing of international bank account numbers into an <see cref="T:IbanNet.Iban" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IIbanParser.Parse(System.String)">
+            <summary>
+            Parses the specified <paramref name="value" /> into an <see cref="T:IbanNet.Iban" />.
+            </summary>
+            <param name="value">The IBAN value to parse.</param>
+            <returns>an <see cref="T:IbanNet.Iban" /> if the <paramref name="value" /> is parsed successfully</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when the specified <paramref name="value" /> is null.</exception>
+            <exception cref="T:IbanNet.IbanFormatException">Thrown when the specified <paramref name="value" /> is not a valid IBAN.</exception>
+        </member>
+        <member name="M:IbanNet.IIbanParser.TryParse(System.String,IbanNet.Iban@)">
+            <summary>
+            Attempts to parse the specified <paramref name="value" /> into an <see cref="T:IbanNet.Iban" />.
+            </summary>
+            <param name="value">The IBAN value to parse.</param>
+            <param name="iban">The <see cref="T:IbanNet.Iban" /> if the <paramref name="value" /> is parsed successfully.</param>
+            <returns><see langword="true" /> if the <paramref name="value" /> is parsed successfully, or <see langword="false" /> otherwise</returns>
+        </member>
+        <member name="T:IbanNet.IIbanValidator">
+            <summary>
+            Describes a validator for IBAN.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IIbanValidator.Validate(System.String)">
+            <summary>
+            Validates the specified IBAN for correctness.
+            </summary>
+            <param name="iban">The IBAN value to validate.</param>
+            <returns>a validation result, indicating if the IBAN is valid or not</returns>
+        </member>
+        <member name="T:IbanNet.Registry.BankStructure">
+            <summary>
+            Defines a bank section of a structure.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.BankStructure.#ctor(IbanNet.Registry.Patterns.Pattern,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.BankStructure" /> class using specified parameters.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="position">The position where the pattern occurs within the parent structure.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="pattern" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="position" /> is less than 0.</exception>
+        </member>
+        <member name="T:IbanNet.Registry.BbanStructure">
+            <summary>
+            Contains information about the BBAN structure.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.BbanStructure.#ctor(IbanNet.Registry.Patterns.Pattern,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.BbanStructure" /> class using specified parameters.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="position">The position where the pattern occurs within the parent structure.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="pattern" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="position" /> is less than 0.</exception>
+        </member>
+        <member name="T:IbanNet.Registry.BranchStructure">
+            <summary>
+            Defines a branch section of a structure.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.BranchStructure.#ctor(IbanNet.Registry.Patterns.Pattern,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.BranchStructure" /> class using specified parameters.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="position">The position where the pattern occurs within the parent structure.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="pattern" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="position" /> is less than 0.</exception>
+        </member>
+        <member name="T:IbanNet.Registry.IbanCountry">
+            <summary>
+            Contains IBAN/BBAN format information about the country.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanCountry.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.IbanCountry" /> class using specified 2 letter ISO region name.
+            </summary>
+            <param name="twoLetterISORegionName">The 2 letter iso region name.</param>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.TwoLetterISORegionName">
+            <summary>
+            Gets the country code.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.DisplayName">
+            <summary>
+            Gets the display name.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.EnglishName">
+            <summary>
+            Gets the English name.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.IncludedCountries">
+            <summary>
+            Gets the list of included countries.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.Sepa">
+            <summary>
+            Gets SEPA information.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.DomesticAccountNumberExample">
+            <summary>
+            Gets a domestic account number example.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.Bban">
+            <summary>
+            Gets the structure of the BBAN.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.Iban">
+            <summary>
+            Gets the structure of the IBAN.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.Bank">
+            <summary>
+            Gets the bank identifier structure section.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.Branch">
+            <summary>
+            Gets the branch identifier structure section.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanCountry.LastUpdatedDate">
+            <summary>
+            Gets when this <see cref="T:IbanNet.Registry.IbanCountry" /> was last updated in the Iban Registry.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanCountry.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Registry.IbanGenerator">
+            <summary>
+            A generator to create random IBAN's.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.IbanGenerator" /> class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanGenerator.#ctor(IbanNet.Registry.IIbanRegistry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.IbanGenerator" /> class using specified <paramref name="registry" />.
+            </summary>
+            <param name="registry">The registry containing the IBAN country definitions.</param>
+        </member>
+        <member name="M:IbanNet.Registry.IbanGenerator.Generate(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Registry.IbanRegistry">
+            <summary>
+            Represents a registry of IBAN countries.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IbanRegistry.Default">
+            <summary>
+            Gets the default IBAN registry initialized with all the built-in countries.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanRegistry.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:IbanNet.Registry.IbanRegistry" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanRegistry.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.IbanRegistry.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.IbanRegistry.Providers">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Registry.IbanRegistry.TryGetValue(System.String,IbanNet.Registry.IbanCountry@)">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.IbanRegistry.Item(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.IbanRegistry.Dictionary">
+            <summary>
+            Gets the registry mapped as dictionary by country code.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanRegistryListProvider.#ctor(System.Collections.Generic.IEnumerable{IbanNet.Registry.IbanCountry})">
+            <summary>
+            Initializes a new instance of <see cref="T:IbanNet.Registry.IbanRegistry" /> initialized with specified <paramref name="countries" />.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.IbanStructure">
+            <summary>
+            Describes an IBAN structure.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IbanStructure.#ctor(IbanNet.Registry.Patterns.Pattern)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.IbanStructure" /> class using specified parameters.
+            </summary>
+            <param name="pattern">The pattern.</param>
+        </member>
+        <member name="P:IbanNet.Registry.IbanStructure.EffectiveDate">
+            <summary>
+            Gets the date the IBAN came in effect.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.IIbanGenerator">
+            <summary>
+            Describes a way to generate test IBAN's.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IIbanGenerator.Generate(System.String)">
+            <summary>
+            Generates a random IBAN for specified IBAN pattern.
+            <para>
+            All characters except the country code and IBAN check digits are generated based on the structure defined for a country. The IBAN check digits are subsequently computed based on the generated data.
+            </para>
+            <para>
+            While the IBAN produced will pass validation, it may not be an actual valid bank account and should ONLY be used for testing purposes.
+            </para>
+            </summary>
+            <param name="countryCode">The country code.</param>
+            <returns>A new random IBAN for specified <paramref name="countryCode" />.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="countryCode" /> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="countryCode" /> is not found in the registry.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when no BBAN pattern is registered for the <paramref name="countryCode" />.</exception>
+        </member>
+        <member name="T:IbanNet.Registry.IIbanRegistry">
+            <summary>
+            Represents the IBAN registry used by the validator.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.IIbanRegistry.Providers">
+            <summary>
+            Gets the registry providers.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.IIbanRegistry.TryGetValue(System.String,IbanNet.Registry.IbanCountry@)">
+            <summary>
+            Tries to get the <see cref="T:IbanNet.Registry.IbanCountry" /> by <paramref name="twoLetterISORegionName" />.
+            </summary>
+            <param name="twoLetterISORegionName">The 2 letter ISO region name.</param>
+            <param name="country"></param>
+            <returns>true if the country was found, false otherwise</returns>
+        </member>
+        <member name="P:IbanNet.Registry.IIbanRegistry.Item(System.String)">
+            <summary>
+            Gets the <see cref="T:IbanNet.Registry.IbanCountry" /> by <paramref name="twoLetterISORegionName" />.
+            </summary>
+            <param name="twoLetterISORegionName">The 2 letter ISO region name.</param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown when the country is not found by the provided <paramref name="twoLetterISORegionName" />.</exception>
+        </member>
+        <member name="T:IbanNet.Registry.IIbanRegistryProvider">
+            <summary>
+            Provides IBAN registry data.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.Patterns.AsciiCategory">
+            <summary>
+            Defines the ASCII category of a character.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.Other">
+            <summary>
+            Other ASCII category.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.Space">
+            <summary>
+            The space character.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.Digit">
+            <summary>
+            ASCII digit.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.UppercaseLetter">
+            <summary>
+            ASCII uppercase letter.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.LowercaseLetter">
+            <summary>
+            ASCII lowercase letter.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.Letter">
+            <summary>
+            ASCII letter.
+            </summary>
+        </member>
+        <member name="F:IbanNet.Registry.Patterns.AsciiCategory.AlphaNumeric">
+            <summary>
+            ASCII letter or digit.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.Patterns.ITokenizer`1">
+            <summary>
+            Provides a way to classify sections of an input string into separate tokens.
+            </summary>
+            <typeparam name="TToken"></typeparam>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.ITokenizer`1.Tokenize(System.ReadOnlySpan{System.Char})">
+            <summary>
+            Tokenizes an input string into individual tokens.
+            </summary>
+            <param name="input">The input buffer.</param>
+            <returns>Returns an enumerable of tokens describing the input buffer.</returns>
+        </member>
+        <member name="T:IbanNet.Registry.Patterns.Pattern">
+            <summary>
+            Encapsulates the pattern or subsection of a pattern of an IBAN or BBAN. Patterns consist of one or more tokens, each which describes the expected character and number of occurrences in that pattern.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.Pattern.#ctor(System.String,IbanNet.Registry.Patterns.ITokenizer{IbanNet.Registry.Patterns.PatternToken})">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.Pattern" /> class using a <paramref name="pattern" /> and <paramref name="tokenizer" />.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="tokenizer">The tokenizer to break the pattern in individual tokens down with.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="pattern" /> or <paramref name="tokenizer" /> is null.</exception>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.Pattern.#ctor(System.Collections.Generic.IEnumerable{IbanNet.Registry.Patterns.PatternToken})">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.Pattern" /> class using specified <paramref name="tokens" />.
+            </summary>
+            <param name="tokens">The individual tokens describing the pattern.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="tokens" /> is null.</exception>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.Pattern.Tokens">
+            <summary>
+            Gets the individual tokens describing the pattern.
+            </summary>
+            <exception cref="T:IbanNet.Registry.Patterns.PatternException">Thrown when the pattern is invalid.</exception>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.Pattern.IsFixedLength">
+            <summary>
+            Gets whether or not the pattern is of fixed length.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.Pattern.MaxLength">
+            <summary>
+            Gets the maximum length of this pattern.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.Pattern.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Registry.Patterns.PatternException">
+            <summary>
+            The exception that is thrown when a pattern is invalid.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.PatternException" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.PatternException" /> class using specified message.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.PatternException" /> class using specified message and inner exception.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.Patterns.PatternException" /> with serialized data.
+            </summary>
+            <param name="info">The object that holds the serialized data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:IbanNet.Registry.Patterns.PatternToken">
+            <summary>
+            Defines a token that spans one or more characters of the same <see cref="T:IbanNet.Registry.Patterns.AsciiCategory" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternToken.#ctor(IbanNet.Registry.Patterns.AsciiCategory,System.Int32)">
+            <summary>
+            Initializes a new instance of the pattern token.
+            </summary>
+            <param name="category">The ASCII category for the token.</param>
+            <param name="length">The length of the token.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="length" /> is less than 1.</exception>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Thrown when <paramref name="category" /> is an invalid value.</exception>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternToken.#ctor(IbanNet.Registry.Patterns.AsciiCategory,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the pattern token.
+            </summary>
+            <param name="category">The ASCII category for the token.</param>
+            <param name="minLength">The minimum length of the token.</param>
+            <param name="maxLength">The maximum length of the token.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="minLength" /> or <paramref name="maxLength" /> is less than 1, or <paramref name="maxLength" /> is less than <paramref name="minLength" />.</exception>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Thrown when <paramref name="category" /> is an invalid value.</exception>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.PatternToken.Category">
+            <summary>
+            Gets the ASCII category for this token.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.PatternToken.MinLength">
+            <summary>
+            Gets the minimum length of this token.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.PatternToken.MaxLength">
+            <summary>
+            Gets the maximum length of this token.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.Patterns.PatternToken.IsFixedLength">
+            <summary>
+            Gets whether or not this token is fixed length.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternToken.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternTokenizer.Tokenize(System.ReadOnlySpan{System.Char})">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.Registry.Patterns.PatternTokenizer.GetLength(System.String,System.Boolean@)">
+            <summary>
+            Gets the length of the token and whether or not it is fixed length.
+            </summary>
+            <param name="token">The token to get length for.</param>
+            <param name="isFixedLength"><see langword="true"/> if the token is fixed length; otherwise, <see langword="false"/></param>
+            <returns></returns>
+        </member>
+        <member name="T:IbanNet.Registry.SepaInfo">
+            <summary>
+            Represents SEPA information.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.SepaInfo.IsMember">
+            <summary>
+            Gets whether this region is a SEPA country.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.SepaInfo.IncludedCountries">
+            <summary>
+            Gets a list of included SEPA countries.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.StructureSection">
+            <summary>
+            Defines a section of a structure.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Registry.StructureSection.#ctor(IbanNet.Registry.Patterns.Pattern,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Registry.StructureSection" /> class using specified parameters.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="position">The position where the pattern occurs within the parent structure.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="pattern" /> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="position" /> is less than 0.</exception>
+        </member>
+        <member name="P:IbanNet.Registry.StructureSection.Position">
+            <summary>
+            Gets or sets the position within the structure.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when setting new value to less than 0.</exception>
+        </member>
+        <member name="P:IbanNet.Registry.StructureSection.Length">
+            <summary>
+            Gets the section length.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.StructureSection.Example">
+            <summary>
+            Gets the section example.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Registry.StructureSection.Pattern">
+            <summary>
+            Gets the pattern.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Registry.Swift.SwiftPatternTokenizer">
+            <remarks>
+            https://www.swift.com/standards/data-standards/iban
+            length
+            ! = fixed
+            marker
+            </remarks>
+        </member>
+        <member name="T:IbanNet.Registry.Swift.SwiftRegistryProvider">
+            <summary>
+            This IBAN registry provider contains IBAN/BBAN/SEPA information for all known IBAN countries.
+            </summary>
+            <remarks>
+            Generated from: swift_iban_registry_202106.r90.txt
+            </remarks>
+        </member>
+        <member name="M:IbanNet.Registry.Swift.SwiftRegistryProvider.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.Swift.SwiftRegistryProvider.Count">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Registry.Wikipedia.WikipediaRegistryProvider">
+            <summary>
+            This IBAN registry provider is derived from Wikipedia.
+            </summary>
+            <remarks>
+            <para>Note: this provider does not conform to the official spec, and is provided as an add-on. Use at your own risk.</para>
+            <para>
+            Generated from: https://en.wikipedia.org/wiki/International_Bank_Account_Number
+            Page ID: 15253
+            Rev ID: 1036918399
+            </para>
+            </remarks>
+        </member>
+        <member name="M:IbanNet.Registry.Wikipedia.WikipediaRegistryProvider.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="P:IbanNet.Registry.Wikipedia.WikipediaRegistryProvider.Count">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_Invalid_country_code">
+            <summary>
+              Looks up a localized string similar to Invalid country code. must be exactly two characters long..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_Registry_is_required">
+            <summary>
+              Looks up a localized string similar to Provide the registry..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_The_country_code_0_is_not_registered">
+            <summary>
+              Looks up a localized string similar to The country code &apos;{0}&apos; is not registered..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_The_format_0_is_invalid">
+            <summary>
+              Looks up a localized string similar to The format &apos;{0}&apos; is invalid..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_The_format_0_is_invalid_with_supported_formats">
+            <summary>
+              Looks up a localized string similar to The format &apos;{0}&apos; is invalid. Supported formats are &apos;{1}&apos; (flat) and &apos;{2}&apos; (partitioned by space)..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_The_format_is_required_with_supported_formats">
+            <summary>
+              Looks up a localized string similar to The format is required. Supported formats are &apos;{0}&apos; (flat) and &apos;{1}&apos; (partitioned by space)..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.ArgumentException_The_structure_segment_0_is_invalid">
+            <summary>
+              Looks up a localized string similar to The pattern segment &apos;{0}&apos; is invalid at position {1}..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Enum_value_0_should_be_defined_in_the_1_enum">
+            <summary>
+              Looks up a localized string similar to Enum value &apos;{0}&apos; should be defined in the &apos;{1}&apos; enum..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_Builder_A_value_for_0_is_not_supported_for_country_code_1">
+            <summary>
+              Looks up a localized string similar to A value for &apos;{0}&apos; is not supported for country code {1}..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_Builder_The_BBAN_cannot_be_built">
+            <summary>
+              Looks up a localized string similar to The BBAN cannot be built..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_Builder_The_country_is_required">
+            <summary>
+              Looks up a localized string similar to The country is required..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_Builder_The_IBAN_cannot_be_built">
+            <summary>
+              Looks up a localized string similar to The IBAN cannot be built..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_Builder_The_value_0_does_not_have_the_correct_length_of_1">
+            <summary>
+              Looks up a localized string similar to The value &apos;{0}&apos; does not have the correct length of {1}..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_The_country_0_does_not_define_a_BBAN_pattern">
+            <summary>
+              Looks up a localized string similar to The country &apos;{0}&apos; does not define a BBAN pattern..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.Exception_The_country_0_does_not_define_a_IBAN_pattern">
+            <summary>
+              Looks up a localized string similar to The country &apos;{0}&apos; does not define a IBAN pattern..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.IbanFormatException_The_value_0_is_not_a_valid_IBAN">
+            <summary>
+              Looks up a localized string similar to The value &apos;{0}&apos; is not a valid IBAN..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.IllegalCharactersResult">
+            <summary>
+              Looks up a localized string similar to The IBAN contains illegal characters..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.InvalidCheckDigitsResult">
+            <summary>
+              Looks up a localized string similar to The IBAN check digits are incorrect..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.InvalidLengthResult">
+            <summary>
+              Looks up a localized string similar to The IBAN has an incorrect length..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.InvalidStructureResult">
+            <summary>
+              Looks up a localized string similar to The structure of the IBAN is incorrect..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.InvalidTokenException_Expected_alphanumeric_character_at_position_0_but_found_1">
+            <summary>
+              Looks up a localized string similar to Expected alphanumeric character at position {0}, but found &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.One_or_more_providers_is_required">
+            <summary>
+              Looks up a localized string similar to One or more providers is required..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.PartitionOn_At_least_one_character_to_partition_on_is_required">
+            <summary>
+              Looks up a localized string similar to At least one character to partition on is required..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.The_registry_has_no_providers">
+            <summary>
+              Looks up a localized string similar to The registry has no providers..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.The_value_cannot_be_less_than_0">
+            <summary>
+              Looks up a localized string similar to The value cannot be less than {0}..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.The_value_cannot_be_less_than_or_equal_to_0">
+            <summary>
+              Looks up a localized string similar to The value cannot be less than or equal to {0}..
+            </summary>
+        </member>
+        <member name="P:IbanNet.Resources.UnknownCountryCodeResult">
+            <summary>
+              Looks up a localized string similar to The country code is unknown/not supported..
+            </summary>
+        </member>
+        <member name="T:IbanNet.TypeConverters.IbanTypeConverter">
+            <summary>
+            Provides a way of converting an <see cref="T:IbanNet.Iban" /> from and to other types.
+            </summary>
+        </member>
+        <member name="M:IbanNet.TypeConverters.IbanTypeConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.TypeConverters.IbanTypeConverter" /> class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.TypeConverters.IbanTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:IbanNet.TypeConverters.IbanTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.ValidationResult">
+            <summary>
+            Represents the validator result.
+            </summary>
+        </member>
+        <member name="P:IbanNet.ValidationResult.IsValid">
+            <summary>
+            Gets whether validation is successful.
+            </summary>
+        </member>
+        <member name="P:IbanNet.ValidationResult.AttemptedValue">
+            <summary>
+            Gets the IBAN value for which validation was attempted.
+            </summary>
+        </member>
+        <member name="P:IbanNet.ValidationResult.Country">
+            <summary>
+            Gets the country info that matches the iban, if any.
+            </summary>
+        </member>
+        <member name="P:IbanNet.ValidationResult.Error">
+            <summary>
+            Gets the error that occurred, if any.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.DefaultValidationRuleResolver">
+            <summary>
+            Resolves all validation rules, built-in first, followed by custom rules.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.DefaultValidationRuleResolver.#ctor(IbanNet.IbanValidatorOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.DefaultValidationRuleResolver" />.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.DefaultValidationRuleResolver.GetRules">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.IValidationRuleResolver">
+            <summary>
+            Resolves validation rules.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.IValidationRuleResolver.GetRules">
+            <summary>
+            Gets the validation rules.
+            </summary>
+            <returns>An enumerable with the validation rules to be used for validation.</returns>
+        </member>
+        <member name="T:IbanNet.Validation.Results.ErrorResult">
+            <summary>
+            Describes the error that occurred for a validation rule. Custom validation errors should derive from this class.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.ErrorResult.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.ErrorResult" /> class using specified <paramref name="errorMessage" />.
+            </summary>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="P:IbanNet.Validation.Results.ErrorResult.ErrorMessage">
+            <summary>
+            Gets the error message.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.ExceptionResult">
+            <summary>
+            Describes the error that occurred for a validation rule.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.ExceptionResult.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.ExceptionResult" /> class using specified <paramref name="exception" />.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="P:IbanNet.Validation.Results.ExceptionResult.Exception">
+            <summary>
+            Gets the exception.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.IllegalCharactersResult">
+            <summary>
+            The result returned when the IBAN contains illegal characters.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.IllegalCharactersResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.IllegalCharactersResult" /> class.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.IllegalCountryCodeCharactersResult">
+            <summary>
+            The result returned when the IBAN contains illegal characters in the country code.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.InvalidCheckDigitsResult">
+            <summary>
+            The result returned when the IBAN check digits are incorrect.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.InvalidCheckDigitsResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.InvalidCheckDigitsResult" /> class.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.InvalidLengthResult">
+            <summary>
+            The result returned when the IBAN has an incorrect length.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.InvalidLengthResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.InvalidLengthResult" /> class.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.InvalidStructureResult">
+            <summary>
+            The result returned when the structure of the IBAN is incorrect.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.InvalidStructureResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.InvalidStructureResult" /> class.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.UnknownCountryCodeResult">
+            <summary>
+            The result returned when the country code is unknown/not supported.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.UnknownCountryCodeResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.UnknownCountryCodeResult" /> class.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Results.ValidationRuleResult">
+            <summary>
+            Encapsulates the result of a validation rule.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Results.ValidationRuleResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Results.ValidationRuleResult" />.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Validation.Results.ValidationRuleResult.Success">
+            <summary>
+            Signals the success of the rule.
+            </summary>
+        </member>
+        <member name="T:IbanNet.Validation.Rules.HasCountryCodeRule">
+            <summary>
+            Asserts that the IBAN has a country code but does not check the validity of the country code itself.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.HasCountryCodeRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.HasIbanChecksumRule">
+            <summary>
+            Asserts that the IBAN checksum digits are not 00, 01 or 99.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.HasIbanChecksumRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.IIbanValidationRule">
+            <summary>
+            Describes a validation rule for IBAN.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.IIbanValidationRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <summary>
+            Validates the IBAN against this rule.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="T:IbanNet.Validation.Rules.IsMatchingStructureRule">
+            <summary>
+            Asserts that the IBAN is matching the structure defined for a specific country.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.IsMatchingStructureRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.IsValidCountryCodeRule">
+            <summary>
+            Asserts that the IBAN has a valid and known country code.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.IsValidCountryCodeRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.IsValidLengthRule">
+            <summary>
+            Asserts that the IBAN has the correct length as defined for its country.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.IsValidLengthRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.Mod97Rule">
+            <summary>
+            Asserts that the check digits are valid.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.Mod97Rule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.NoIllegalCharactersRule">
+            <summary>
+            Asserts that the IBAN does not contain any illegal characters.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.NoIllegalCharactersRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.NotEmptyRule">
+            <summary>
+            Asserts that the IBAN is not an empty value.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.NotEmptyRule.Validate(IbanNet.Validation.Rules.ValidationRuleContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:IbanNet.Validation.Rules.ValidationRuleContext">
+            <summary>
+            The validation context for a validation rule.
+            </summary>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.ValidationRuleContext.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Rules.ValidationRuleContext" /> class.
+            </summary>
+            <param name="value">The IBAN value to validate.</param>
+        </member>
+        <member name="M:IbanNet.Validation.Rules.ValidationRuleContext.#ctor(System.String,IbanNet.Registry.IbanCountry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:IbanNet.Validation.Rules.ValidationRuleContext" /> class.
+            </summary>
+            <param name="value">The IBAN value to validate.</param>
+            <param name="country"></param>
+        </member>
+        <member name="P:IbanNet.Validation.Rules.ValidationRuleContext.Value">
+            <summary>
+            Gets the IBAN value to validate.
+            </summary>
+        </member>
+        <member name="P:IbanNet.Validation.Rules.ValidationRuleContext.Country">
+            <summary>
+            Gets or sets the country info that applies to the IBAN, if any.
+            </summary>
+        </member>
+        <member name="T:IbanNet.IFluentInterface">
+            <summary>
+            Interface that is used to build fluent interfaces by hiding methods declared by <see cref="T:System.Object"/> from IntelliSense.
+            </summary>
+            <remarks>
+            Code that consumes implementations of this interface should expect one of two things:
+            <list type = "number">
+              <item>When referencing the interface from within the same solution (project reference), you will still see the methods this interface is meant to hide.</item>
+              <item>When referencing the interface through the compiled output assembly (external reference), the standard Object methods will be hidden as intended.</item>
+              <item>When using Resharper, be sure to configure it to respect the attribute: Options, go to Environment | IntelliSense | Completion Appearance and check "Filter members by [EditorBrowsable] attribute".</item>
+            </list>
+            See https://kzu.github.io/IFluentInterface for more information.
+            </remarks>
+            <nuget id="IFluentInterface" />
+        </member>
+        <member name="M:IbanNet.IFluentInterface.GetType">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.GetType"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IFluentInterface.GetHashCode">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.GetHashCode"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IFluentInterface.ToString">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.ToString"/> method from IntelliSense.
+            </summary>
+        </member>
+        <member name="M:IbanNet.IFluentInterface.Equals(System.Object)">
+            <summary>
+            Redeclaration that hides the <see cref="M:System.Object.Equals(System.Object)"/> method from IntelliSense.
+            </summary>
+        </member>
+    </members>
+</doc>

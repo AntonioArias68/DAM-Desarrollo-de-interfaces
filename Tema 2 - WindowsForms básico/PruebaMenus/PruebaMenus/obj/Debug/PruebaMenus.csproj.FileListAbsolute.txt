@@ -1,0 +1,10 @@
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\bin\Debug\PruebaMenus.exe.config
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\bin\Debug\PruebaMenus.exe
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\bin\Debug\PruebaMenus.pdb
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.csproj.AssemblyReference.cache
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.Form1.resources
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.Properties.Resources.resources
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.csproj.GenerateResource.cache
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.csproj.CoreCompileInputs.cache
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.exe
+C:\Users\ivanc\source\repos\PruebaMenus\PruebaMenus\obj\Debug\PruebaMenus.pdb

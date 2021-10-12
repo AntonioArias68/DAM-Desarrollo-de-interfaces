@@ -1,0 +1,10 @@
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\bin\Debug\LoteriaPrimitiva.exe.config
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\bin\Debug\LoteriaPrimitiva.exe
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\bin\Debug\LoteriaPrimitiva.pdb
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.csproj.AssemblyReference.cache
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.Properties.Resources.resources
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.csproj.GenerateResource.cache
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.csproj.CoreCompileInputs.cache
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.exe
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.pdb
+C:\Users\ivanc\source\repos\LoteriaPrimitiva\LoteriaPrimitiva\obj\Debug\LoteriaPrimitiva.FormularioPrimitiva.resources

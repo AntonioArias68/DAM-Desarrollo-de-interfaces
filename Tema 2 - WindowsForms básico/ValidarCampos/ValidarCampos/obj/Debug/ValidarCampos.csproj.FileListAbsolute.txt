@@ -1,0 +1,13 @@
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\bin\Debug\ValidarCampos.exe.config
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\bin\Debug\ValidarCampos.exe
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\bin\Debug\ValidarCampos.pdb
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.csproj.AssemblyReference.cache
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.Form1.resources
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.Properties.Resources.resources
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.csproj.GenerateResource.cache
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.csproj.CoreCompileInputs.cache
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.exe
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.pdb
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\obj\Debug\ValidarCampos.VerDatos.resources
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\bin\Debug\IbanNet.dll
+C:\Users\ivanc\source\repos\ValidarCampos\ValidarCampos\bin\Debug\IbanNet.xml
