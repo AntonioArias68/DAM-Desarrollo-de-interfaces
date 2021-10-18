@@ -8,3 +8,23 @@ Email: sebasro@gmail.com
 Matrícula: 9321-AWE
 ********************************************************
 
+*********************** REGISTRO ***********************
+Nº Cuenta: ES                
+Nombre: 
+Apellidos: 
+DNI: 
+Teléfono:    -   -
+Email: 
+Matrícula:     -
+********************************************************
+
+*********************** REGISTRO ***********************
+Nº Cuenta: ES94 2080 5801 10 1234567891
+Nombre: Iván
+Apellidos: Coello Cortés
+DNI: 05982378D
+Teléfono: 695-166-805
+Email: ivancoellocortes@gmail.com
+Matrícula: 1231-CVC
+********************************************************
+

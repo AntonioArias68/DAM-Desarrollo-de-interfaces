@@ -119,7 +119,7 @@ namespace ValidarCampos
         {
             //Funcio para calcular si es valido el iban. 
 
-            IIbanValidator validator = new IbanValidator();
+            IbanValidator validator = new IbanValidator();
             var validationResult = validator.Validate(iban);
 
             return validationResult.IsValid;
@@ -218,7 +218,6 @@ namespace ValidarCampos
         private void btn_Archivar_Click(object sender, EventArgs e)
         {
             bool valido = false;
-            LimpiarFormulario();
 
             if (!isIBANRegistrado(mskTXT_NumCuenta))
             {
@@ -233,6 +232,7 @@ namespace ValidarCampos
             if (valido)
             {
                 GuardarRegistro();
+                LimpiarFormulario();
             }
 
         }
