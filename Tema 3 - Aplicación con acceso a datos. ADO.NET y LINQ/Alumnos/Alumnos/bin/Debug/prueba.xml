@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<raiz>
+  <hijo id="el_valor_que_yo_quiera">
+    <una>Un_valor</una>
+    <otra>Otro_valor</otra>
+  </hijo>
+</raiz>

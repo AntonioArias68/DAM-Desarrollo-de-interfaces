@@ -117,7 +117,7 @@ namespace ValidarCampos
 
         private static bool CheckIban(string iban)
         {
-            //Funcio para calcular si es valido el iban. 
+            //Función para calcular si es valido el iban. 
 
             IbanValidator validator = new IbanValidator();
             var validationResult = validator.Validate(iban);
