@@ -1,0 +1,10 @@
+C:\Users\ivanc\source\repos\Horarios\Horarios\bin\Debug\Horarios.exe.config
+C:\Users\ivanc\source\repos\Horarios\Horarios\bin\Debug\Horarios.exe
+C:\Users\ivanc\source\repos\Horarios\Horarios\bin\Debug\Horarios.pdb
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.csproj.AssemblyReference.cache
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.Form1.resources
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.Properties.Resources.resources
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.csproj.GenerateResource.cache
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.csproj.CoreCompileInputs.cache
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.exe
+C:\Users\ivanc\source\repos\Horarios\Horarios\obj\Debug\Horarios.pdb
